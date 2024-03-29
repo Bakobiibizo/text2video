@@ -1,0 +1,24 @@
+librosa
+diffusers
+transformers
+accelerate
+huggingface-cli
+opencv-python
+numpy
+moviepy
+python-dotenv
+
+
+# Install the correct version of torch for your os. You can find more information here https://pytorch.org/
+torch
+torchvision
+torchaudio
+
+#Dev dependencies
+pytest
+
+fastapi
+uvicorn
+requests
+websockets
+loguru
