@@ -1,4 +1,4 @@
-from moviepy.editor import VideoFileClip
+from moviepy.video.io.VideoFileClip import VideoFileClip
 
 
 def convert_mp4_to_gif(

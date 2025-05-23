@@ -1,0 +1,11 @@
+README.md
+pyproject.toml
+src/__init__.py
+src/mp4_to_gif.py
+src/stable_diffusion_xl.py
+src/stable_video_xt.py
+src/text2video.egg-info/PKG-INFO
+src/text2video.egg-info/SOURCES.txt
+src/text2video.egg-info/dependency_links.txt
+src/text2video.egg-info/requires.txt
+src/text2video.egg-info/top_level.txt

@@ -1,0 +1,18 @@
+version: '3'
+services:
+  text2video:
+    build: .
+    ports:
+      - "7095:7095"
+    volumes:
+      - ./data:/app/data
+    env_file:
+      - .env
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    command: ["/root/.local/bin/uv", "run", "api.py"]

@@ -1,3 +1,18 @@
+# /// script
+# requires-python = ">=3.12"
+# dependencies = [
+#     "diffusers",
+#     "fastapi",
+#     "loguru",
+#     "moviepy",
+#     "python-dotenv",
+#     "torch",
+#     "torchaudio",
+#     "torchvision",
+#     "transformers",
+#     "uvicorn",
+# ]
+# ///
 import base64
 import uvicorn
 import os
@@ -5,16 +20,15 @@ from fastapi import FastAPI, HTTPException
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
-from utilities.endpoint_configs import EndpointConfigManager
-from utilities.data_models import Text2VideoRequest, Image2VideoRequest
+from utilities.data_models import ConfigManager, Text2VideoRequest, Image2VideoRequest
 from main import main as generate_video_main
 import loguru
 from PIL import Image
 
 logger = loguru.logger
 
-manager = EndpointConfigManager()
-config = manager.text2video
+manager = ConfigManager(environment="dev")
+config = manager.get_config("text2video")
 
 logger.debug(config.url)
 
